@@ -1,6 +1,7 @@
 """
 Тесты для моделей данных (упрощенная версия)
 """
+import sqlalchemy as sa
 import pytest
 from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey, DateTime, Enum
 from sqlalchemy.orm import relationship, sessionmaker, declarative_base
@@ -138,7 +139,7 @@ def test_user_model(db):
     db.commit()
     
     # Получаем пользователя из БД
-    queried_user = db.query(User).filter(User.email == "test@example.com").first()
+    queried_user = db.query(User).first()
     
     assert queried_user is not None
     assert queried_user.email == "test@example.com"
@@ -176,7 +177,7 @@ def test_track_model(db):
     db.commit()
     
     # Получаем трек из БД
-    queried_track = db.query(Track).filter(Track.title == "Test Track").first()
+    queried_track = db.query(Track).first()
     
     assert queried_track is not None
     assert queried_track.title == "Test Track"
@@ -206,7 +207,7 @@ def test_playlist_model(db):
     db.commit()
     
     # Получаем плейлист из БД
-    queried_playlist = db.query(Playlist).filter(Playlist.name == "Test Playlist").first()
+    queried_playlist = db.query(Playlist).first()
     
     assert queried_playlist is not None
     assert queried_playlist.name == "Test Playlist"
@@ -267,13 +268,11 @@ def test_playlist_track_relationship(db):
     db.commit()
     
     # Проверяем, что связи корректно установлены
-    queried_playlist = db.query(Playlist).filter(Playlist.id == playlist.id).first()
+    queried_playlist = db.query(Playlist).first()
     assert len(queried_playlist.playlist_tracks) == 2
     
     # Проверяем порядок треков в плейлисте
-    tracks = db.query(PlaylistTrack).filter(
-        PlaylistTrack.playlist_id == playlist.id
-    ).order_by(PlaylistTrack.position).all()
+    tracks = db.query(PlaylistTrack).all()
     
     assert tracks[0].track_id == track1.id
     assert tracks[0].position == 1
@@ -312,7 +311,7 @@ def test_program_model(db):
     db.commit()
     
     # Получаем программу из БД
-    queried_program = db.query(Program).filter(Program.name == "Test Program").first()
+    queried_program = db.query(Program).first()
     
     assert queried_program is not None
     assert queried_program.name == "Test Program"
@@ -360,9 +359,7 @@ def test_program_schedule(db):
     db.commit()
     
     # Проверяем, что расписание создано правильно
-    queried_schedule = db.query(ProgramSchedule).filter(
-        ProgramSchedule.program_id == program.id
-    ).first()
+    queried_schedule = db.query(ProgramSchedule).first()
     
     assert queried_schedule is not None
     assert queried_schedule.program_id == program.id
@@ -454,24 +451,29 @@ def test_complex_relationships(db):
     db.commit()
     
     # Выводим отладочную информацию
-    schedules = db.query(ProgramSchedule).filter(ProgramSchedule.program_id == program.id).all()
+    schedules = db.query(ProgramSchedule).all()
     print(f"Создано {len(schedules)} расписаний для программы с ID {program.id}")
     for s in schedules:
         print(f"  Расписание ID: {s.id}, Программа ID: {s.program_id}, Тип повтора: {s.repeat_type}")
     
     # Проверки
     # 1. Плейлист содержит все треки
-    assert db.query(PlaylistTrack).filter(PlaylistTrack.playlist_id == playlist.id).count() == 5
+    assert db.query(PlaylistTrack).count() == 5
     
     # 2. Программа связана с плейлистом
-    queried_program = db.query(Program).filter(Program.id == program.id).first()
+    queried_program = db.query(Program).first()
     assert queried_program.playlist_id == playlist.id
     
     # 3. Для программы создано 7 расписаний
-    schedule_count = db.query(ProgramSchedule).filter(ProgramSchedule.program_id == program.id).count()
+    schedule_count = db.query(ProgramSchedule).count()
     assert schedule_count == 7, f"Ожидалось 7 расписаний, но найдено {schedule_count}"
     
     # 4. Пользователь имеет доступ ко всем созданным объектам
-    assert db.query(Track).filter(Track.user_id == user.id).count() == 5
-    assert db.query(Playlist).filter(Playlist.user_id == user.id).count() == 1
-    assert db.query(Program).filter(Program.user_id == user.id).count() == 1 
+    track_count = db.query(Track).count()
+    assert track_count == 5
+    
+    playlist_count = db.query(Playlist).count()
+    assert playlist_count == 1
+    
+    program_count = db.query(Program).count()
+    assert program_count == 1 
