@@ -1,0 +1,222 @@
+Запуск модульных тестов...
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0 -- /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Volumes/SSD HD/wwwdev/разное/radio-kamyshi
+plugins: anyio-4.9.0, asyncio-0.26.0, cov-6.1.1
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 79 items / 4 errors
+
+==================================== ERRORS ====================================
+___________________ ERROR collecting backend/test_models.py ____________________
+backend/test_models.py:6: in <module>
+    from app.db.session import engine
+backend/app/db/session.py:5: in <module>
+    from app.core.config import settings
+backend/app/core/config.py:135: in <module>
+    settings = Settings()
+backend/venv/lib/python3.13/site-packages/pydantic_settings/main.py:176: in __init__
+    super().__init__(
+E   pydantic_core._pydantic_core.ValidationError: 5 validation errors for Settings
+E   SITE_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   API_EXTERNAL_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SECRET_KEY_BASE
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='super-secret-key-base', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   ANON_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...I_OZ2T9FtRU2BBNWN8Bu4GE', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SERVICE_ROLE_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...S-PHK5vgusbcbo7X36XVt4Q', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+_________________ ERROR collecting backend/test_settings_db.py _________________
+backend/test_settings_db.py:4: in <module>
+    from app.core.config import settings
+backend/app/core/config.py:135: in <module>
+    settings = Settings()
+backend/venv/lib/python3.13/site-packages/pydantic_settings/main.py:176: in __init__
+    super().__init__(
+E   pydantic_core._pydantic_core.ValidationError: 5 validation errors for Settings
+E   SITE_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   API_EXTERNAL_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SECRET_KEY_BASE
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='super-secret-key-base', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   ANON_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...I_OZ2T9FtRU2BBNWN8Bu4GE', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SERVICE_ROLE_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...S-PHK5vgusbcbo7X36XVt4Q', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+_______________ ERROR collecting backend/tests/unit/test_api.py ________________
+backend/tests/unit/test_api.py:11: in <module>
+    from app.main import app
+backend/app/main.py:6: in <module>
+    from app.api.api_v1.api import api_router
+backend/app/api/api_v1/api.py:3: in <module>
+    from app.api.api_v1.endpoints import users, auth, tracks, playlists, programs, broadcast
+backend/app/api/api_v1/endpoints/users.py:7: in <module>
+    from app import crud, models, schemas
+backend/app/crud/__init__.py:1: in <module>
+    from app.crud.crud_user import user
+backend/app/crud/crud_user.py:5: in <module>
+    from app.core.security import get_password_hash, verify_password
+backend/app/core/security.py:7: in <module>
+    from app.core.config import settings
+backend/app/core/config.py:135: in <module>
+    settings = Settings()
+backend/venv/lib/python3.13/site-packages/pydantic_settings/main.py:176: in __init__
+    super().__init__(
+E   pydantic_core._pydantic_core.ValidationError: 5 validation errors for Settings
+E   SITE_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   API_EXTERNAL_URL
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='http://localhost:8080', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SECRET_KEY_BASE
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='super-secret-key-base', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   ANON_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...I_OZ2T9FtRU2BBNWN8Bu4GE', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+E   SERVICE_ROLE_KEY
+E     Extra inputs are not permitted [type=extra_forbidden, input_value='eyJhbGciOiJIUzI1NiIsInR5...S-PHK5vgusbcbo7X36XVt4Q', input_type=str]
+E       For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+____ ERROR collecting backend/tests/unit/test_api_broadcast_integration.py _____
+backend/tests/unit/test_api_broadcast_integration.py:268: in <module>
+    @app.get("/api/v1/broadcast/status")
+backend/venv/lib/python3.13/site-packages/fastapi/routing.py:994: in decorator
+    self.add_api_route(
+backend/venv/lib/python3.13/site-packages/fastapi/routing.py:933: in add_api_route
+    route = route_class(
+backend/venv/lib/python3.13/site-packages/fastapi/routing.py:554: in __init__
+    self.dependant = get_dependant(path=self.path_format, call=self.endpoint)
+backend/venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py:292: in get_dependant
+    sub_dependant = get_param_sub_dependant(
+backend/venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py:126: in get_param_sub_dependant
+    return get_sub_dependant(
+backend/venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py:162: in get_sub_dependant
+    sub_dependant = get_dependant(
+backend/venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py:285: in get_dependant
+    param_details = analyze_param(
+backend/venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py:488: in analyze_param
+    field = create_model_field(
+backend/venv/lib/python3.13/site-packages/fastapi/utils.py:98: in create_model_field
+    raise fastapi.exceptions.FastAPIError(
+E   fastapi.exceptions.FastAPIError: Invalid args for response field! Hint: check that <class 'sqlalchemy.orm.session.Session'> is a valid Pydantic field type. If you are using a return type annotation that is not a valid Pydantic field (e.g. Union[Response, dict, None]) you can disable generating the response model from the type annotation with the path operation decorator parameter response_model=None. Read more: https://fastapi.tiangolo.com/tutorial/response-model/
+=============================== warnings summary ===============================
+backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+backend/tests/unit/test_api_broadcast_integration.py:20
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_api_broadcast_integration.py:20: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_audio_integration.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_audio_integration.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_broadcast.py:14
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_broadcast.py:14: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_broadcast_integration.py:15
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_broadcast_integration.py:15: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_components_integration.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_components_integration.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_crud.py:12
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_crud.py:12: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_model_only.py:12
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_model_only.py:12: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+backend/tests/unit/test_playlist_with_tracks.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_playlist_with_tracks.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.2-final-0 _______________
+
+Name                                            Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------
+backend/app/__init__.py                             1      0   100%
+backend/app/api/__init__.py                         0      0   100%
+backend/app/api/api_v1/__init__.py                  0      0   100%
+backend/app/api/api_v1/api.py                       9      7    22%   5-11
+backend/app/api/api_v1/endpoints/__init__.py        0      0   100%
+backend/app/api/api_v1/endpoints/auth.py           58     58     0%   1-142
+backend/app/api/api_v1/endpoints/broadcast.py      18     18     0%   1-42
+backend/app/api/api_v1/endpoints/playlists.py      42     42     0%   1-110
+backend/app/api/api_v1/endpoints/programs.py      119    119     0%   1-315
+backend/app/api/api_v1/endpoints/tracks.py         77     77     0%   1-187
+backend/app/api/api_v1/endpoints/users.py          36     31    14%   8-82
+backend/app/api/dependencies.py                    34     34     0%   1-72
+backend/app/api/deps.py                             1      1     0%   2
+backend/app/core/config.py                         89      4    96%   79, 82, 91, 105
+backend/app/core/security.py                       17     12    29%   9-31
+backend/app/crud/__init__.py                        4      3    25%   2-4
+backend/app/crud/base.py                           39     39     0%   1-66
+backend/app/crud/crud_playlist.py                  28     28     0%   1-67
+backend/app/crud/crud_program.py                   64     64     0%   1-164
+backend/app/crud/crud_track.py                     19     19     0%   1-61
+backend/app/crud/crud_user.py                      38     35     8%   6-60
+backend/app/db/base_class.py                        8      0   100%
+backend/app/db/session.py                          11      7    36%   7-16
+backend/app/db/sqlalchemy_types.py                 40      1    98%   10
+backend/app/main.py                                17     12    29%   7-38
+backend/app/models/__init__.py                      4      0   100%
+backend/app/models/playlist.py                     24      0   100%
+backend/app/models/program.py                      50      0   100%
+backend/app/models/track.py                        24      0   100%
+backend/app/models/user.py                         19      0   100%
+backend/app/schemas/__init__.py                     6      6     0%   1-6
+backend/app/schemas/msg.py                          3      3     0%   1-5
+backend/app/schemas/playlist.py                    30     30     0%   1-51
+backend/app/schemas/program.py                     64     64     0%   1-99
+backend/app/schemas/token.py                        9      9     0%   1-13
+backend/app/schemas/track.py                       31     31     0%   1-48
+backend/app/schemas/user.py                        29     29     0%   1-46
+backend/app/utils/__init__.py                       2      2     0%   1-2
+backend/app/utils/audio.py                        107    107     0%   4-290
+backend/app/utils/email.py                         11     11     0%   1-58
+backend/app/utils/password.py                      15     15     0%   1-25
+-----------------------------------------------------------------------------
+TOTAL                                            1197    918    23%
+=========================== short test summary info ============================
+ERROR backend/test_models.py - pydantic_core._pydantic_core.ValidationError: ...
+ERROR backend/test_settings_db.py - pydantic_core._pydantic_core.ValidationEr...
+ERROR backend/tests/unit/test_api.py - pydantic_core._pydantic_core.Validatio...
+ERROR backend/tests/unit/test_api_broadcast_integration.py - fastapi.exceptio...
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!!
+======================== 12 warnings, 4 errors in 3.46s ========================
+
+Генерация HTML-отчета о покрытии кода...
+
+Статистика тестирования:
+Всего тестов: 79
+Пройдено: 
+Провалено: 0
+Предупреждений: warnings
+
+Покрытие кода тестами: 23%
+

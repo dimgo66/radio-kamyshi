@@ -1,0 +1,53 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+  - name: auth-service
+    url: http://auth:9999
+    routes:
+      - name: auth-routes
+        paths:
+          - /auth
+        strip_path: true
+    plugins:
+      - name: cors
+  
+  - name: rest-service
+    url: http://rest:3000
+    routes:
+      - name: rest-routes
+        paths:
+          - /rest/v1
+        strip_path: true
+    plugins:
+      - name: cors
+  
+  - name: realtime-service
+    url: http://realtime:4000
+    routes:
+      - name: realtime-routes
+        paths:
+          - /realtime/v1
+        strip_path: true
+    plugins:
+      - name: cors
+      
+  - name: meta-service
+    url: http://meta:8080
+    routes:
+      - name: meta-routes
+        paths:
+          - /pg
+        strip_path: true
+    plugins:
+      - name: cors
+  
+  - name: storage-service
+    url: http://storage:5000
+    routes:
+      - name: storage-routes
+        paths:
+          - /storage/v1
+        strip_path: true
+    plugins:
+      - name: cors 

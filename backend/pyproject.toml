@@ -1,0 +1,13 @@
+[tool.pyright]
+venv = "venv"
+venvPath = "."
+pythonVersion = "3.13"
+extraPaths = ["app"]
+useLibraryCodeForTypes = true
+reportMissingImports = true
+reportMissingTypeStubs = false
+
+[project]
+name = "radio-kamyshi-backend"
+version = "0.1.0"
+requires-python = ">=3.10" 

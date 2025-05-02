@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<icecast>
+  <location>Earth</location>
+  <admin>admin@localhost</admin>
+  <limits>
+    <clients>100</clients>
+    <sources>2</sources>
+    <queue-size>524288</queue-size>
+    <client-timeout>30</client-timeout>
+    <header-timeout>15</header-timeout>
+    <source-timeout>10</source-timeout>
+    <burst-on-connect>1</burst-on-connect>
+    <burst-size>65535</burst-size>
+  </limits>
+  <authentication>
+    <source-password>hackme</source-password>
+    <relay-password>hackme</relay-password>
+    <admin-user>admin</admin-user>
+    <admin-password>hackme</admin-password>
+  </authentication>
+  <hostname>localhost</hostname>
+  <listen-socket>
+    <port>8000</port>
+    <bind-address>0.0.0.0</bind-address>
+  </listen-socket>
+  <fileserve>1</fileserve>
+  <paths>
+    <basedir>/usr/share/icecast2</basedir>
+    <logdir>/var/log/icecast2</logdir>
+    <webroot>/usr/share/icecast2/web</webroot>
+    <adminroot>/usr/share/icecast2/admin</adminroot>
+    <pidfile>/run/icecast2/icecast.pid</pidfile>
+    <alias source="/" dest="/status.xsl"/>
+    <alias source="/status" dest="/status.html"/>
+  </paths>
+  <logging>
+    <accesslog>access.log</accesslog>
+    <errorlog>error.log</errorlog>
+    <loglevel>4</loglevel>
+    <logsize>10000</logsize>
+  </logging>
+  <security>
+    <chroot>0</chroot>
+    <changeowner>
+      <user>icecast</user>
+      <group>icecast</group>
+    </changeowner>
+  </security>
+  <mount type="normal">
+    <mount-name>/test.mp3</mount-name>
+    <username>source</username>
+    <password>hackme</password>
+    <max-listeners>100</max-listeners>
+    <dump-file>dump/test.mp3</dump-file>
+    <public>1</public>
+    <stream-name>Test Stream</stream-name>
+    <stream-description>Test Audio Stream</stream-description>
+  </mount>
+</icecast> 

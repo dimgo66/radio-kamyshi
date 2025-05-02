@@ -1,0 +1,233 @@
+Запуск модульных тестов...
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0 -- /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend
+configfile: pyproject.toml
+plugins: anyio-4.9.0, asyncio-0.26.0, cov-6.1.1
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 79 items
+
+tests/unit/test_api_simplified.py::test_read_main PASSED                 [  1%]
+tests/unit/test_api_simplified.py::test_login PASSED                     [  2%]
+tests/unit/test_api_simplified.py::test_read_users_me PASSED             [  3%]
+tests/unit/test_api_simplified.py::test_create_user PASSED               [  5%]
+tests/unit/test_api_simplified.py::test_normal_user_cant_create_user PASSED [  6%]
+tests/unit/test_audio.py::test_audio_metadata_extraction PASSED          [  7%]
+tests/unit/test_audio.py::test_audio_duration_formatting PASSED          [  8%]
+tests/unit/test_audio.py::test_audio_validation PASSED                   [ 10%]
+tests/unit/test_audio.py::test_audio_conversion PASSED                   [ 11%]
+tests/unit/test_audio.py::test_generate_waveform PASSED                  [ 12%]
+tests/unit/test_audio.py::test_calculate_duration_ms PASSED              [ 13%]
+tests/unit/test_audio.py::test_format_duration_from_ms PASSED            [ 15%]
+tests/unit/test_audio.py::test_parse_time_to_seconds PASSED              [ 16%]
+tests/unit/test_audio_integration.py::test_create_track_from_file PASSED [ 17%]
+tests/unit/test_audio_integration.py::test_create_playlist_with_tracks PASSED [ 18%]
+tests/unit/test_audio_integration.py::test_get_playlist_duration PASSED  [ 20%]
+tests/unit/test_audio_integration.py::test_validate_audio_files PASSED   [ 21%]
+tests/unit/test_audio_integration.py::test_waveform_generation PASSED    [ 22%]
+tests/unit/test_broadcast.py::test_start_broadcast PASSED                [ 24%]
+tests/unit/test_broadcast.py::test_stop_broadcast PASSED                 [ 25%]
+tests/unit/test_broadcast.py::test_set_current_track PASSED              [ 26%]
+tests/unit/test_broadcast.py::test_set_current_program PASSED            [ 27%]
+tests/unit/test_broadcast.py::test_get_broadcast_status PASSED           [ 29%]
+tests/unit/test_broadcast.py::test_offline_broadcast_status PASSED       [ 30%]
+tests/unit/test_broadcast_integration.py::test_broadcast_with_playlist PASSED [ 31%]
+tests/unit/test_broadcast_integration.py::test_broadcast_with_program PASSED [ 32%]
+tests/unit/test_broadcast_integration.py::test_next_track_cycling PASSED [ 34%]
+tests/unit/test_broadcast_integration.py::test_program_schedule PASSED   [ 35%]
+tests/unit/test_cache.py::test_set_get PASSED                            [ 36%]
+tests/unit/test_cache.py::test_delete PASSED                             [ 37%]
+tests/unit/test_cache.py::test_exists PASSED                             [ 39%]
+tests/unit/test_cache.py::test_clear PASSED                              [ 40%]
+tests/unit/test_cache.py::test_ttl PASSED                                [ 41%]
+tests/unit/test_cache.py::test_increment_decrement PASSED                [ 43%]
+tests/unit/test_cache.py::test_lists PASSED                              [ 44%]
+tests/unit/test_cache.py::test_hash PASSED                               [ 45%]
+tests/unit/test_components_integration.py::test_track_playlist_integration PASSED [ 46%]
+tests/unit/test_components_integration.py::test_playlist_broadcast_integration PASSED [ 48%]
+tests/unit/test_components_integration.py::test_program_broadcast_integration PASSED [ 49%]
+tests/unit/test_components_integration.py::test_complete_workflow PASSED [ 50%]
+tests/unit/test_config.py::test_settings_load PASSED                     [ 51%]
+tests/unit/test_config.py::test_email_templates_dir PASSED               [ 53%]
+tests/unit/test_config.py::test_settings_default_values PASSED           [ 54%]
+tests/unit/test_config.py::test_settings_validation PASSED               [ 55%]
+tests/unit/test_crud.py::test_crud_user PASSED                           [ 56%]
+tests/unit/test_crud.py::test_crud_track PASSED                          [ 58%]
+tests/unit/test_crud.py::test_crud_playlist PASSED                       [ 59%]
+tests/unit/test_filesystem.py::test_ensure_dirs_exist PASSED             [ 60%]
+tests/unit/test_filesystem.py::test_save_and_read_file PASSED            [ 62%]
+tests/unit/test_filesystem.py::test_delete_file PASSED                   [ 63%]
+tests/unit/test_filesystem.py::test_list_files PASSED                    [ 64%]
+tests/unit/test_filesystem.py::test_get_file_info PASSED                 [ 65%]
+tests/unit/test_filesystem.py::test_file_categories PASSED               [ 67%]
+tests/unit/test_filesystem.py::test_error_handling PASSED                [ 68%]
+tests/unit/test_model_only.py::test_user_model PASSED                    [ 69%]
+tests/unit/test_model_only.py::test_track_model PASSED                   [ 70%]
+tests/unit/test_model_only.py::test_playlist_model PASSED                [ 72%]
+tests/unit/test_model_only.py::test_playlist_track_relationship PASSED   [ 73%]
+tests/unit/test_model_only.py::test_program_model PASSED                 [ 74%]
+tests/unit/test_model_only.py::test_program_schedule PASSED              [ 75%]
+tests/unit/test_model_only.py::test_complex_relationships PASSED         [ 77%]
+tests/unit/test_models.py::test_user_model PASSED                        [ 78%]
+tests/unit/test_models.py::test_user_unique_email PASSED                 [ 79%]
+tests/unit/test_models.py::test_track_model PASSED                       [ 81%]
+tests/unit/test_models.py::test_playlist_model PASSED                    [ 82%]
+tests/unit/test_models.py::test_playlist_track_model PASSED              [ 83%]
+tests/unit/test_models.py::test_program_model PASSED                     [ 84%]
+tests/unit/test_models.py::test_program_schedule_model PASSED            [ 86%]
+tests/unit/test_playlist_with_tracks.py::test_create_playlist PASSED     [ 87%]
+tests/unit/test_playlist_with_tracks.py::test_add_track_to_playlist PASSED [ 88%]
+tests/unit/test_playlist_with_tracks.py::test_get_playlist_tracks PASSED [ 89%]
+tests/unit/test_playlist_with_tracks.py::test_get_playlist_info PASSED   [ 91%]
+tests/unit/test_playlist_with_tracks.py::test_update_playlist PASSED     [ 92%]
+tests/unit/test_playlist_with_tracks.py::test_remove_track_from_playlist PASSED [ 93%]
+tests/unit/test_playlist_with_tracks.py::test_reorder_tracks PASSED      [ 94%]
+tests/unit/test_security.py::test_password_hashing PASSED                [ 96%]
+tests/unit/test_security.py::test_access_token_creation PASSED           [ 97%]
+tests/unit/test_security.py::test_verify_token PASSED                    [ 98%]
+tests/unit/test_security.py::test_get_user_by_token PASSED               [100%]
+
+=============================== warnings summary ===============================
+app/db/base_class.py:6
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/app/db/base_class.py:6: MovedIn20Warning: The ``as_declarative()`` function is now available as sqlalchemy.orm.as_declarative() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    @as_declarative()
+
+tests/unit/test_api_simplified.py:13
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_api_simplified.py:13: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_api_simplified.py:79
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_api_simplified.py:79: PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    @validator("password")
+
+venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323
+tests/unit/test_audio.py::test_audio_metadata_extraction
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/venv/lib/python3.13/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/unit/test_audio_integration.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_audio_integration.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_broadcast.py:14
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_broadcast.py:14: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_broadcast_integration.py:15
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_broadcast_integration.py:15: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_components_integration.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_components_integration.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_crud.py:12
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_crud.py:12: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_model_only.py:12
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_model_only.py:12: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_playlist_with_tracks.py:16
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_playlist_with_tracks.py:16: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_security.py:14
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:14: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+tests/unit/test_crud.py::test_crud_user
+tests/unit/test_crud.py::test_crud_track
+tests/unit/test_crud.py::test_crud_playlist
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_crud.py:115: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    obj = db.query(self.model).get(id)
+
+tests/unit/test_models.py::test_program_model
+tests/unit/test_models.py::test_program_model
+tests/unit/test_models.py::test_program_schedule_model
+tests/unit/test_models.py::test_program_schedule_model
+tests/unit/test_models.py::test_program_schedule_model
+tests/unit/test_models.py::test_program_schedule_model
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/venv/lib/python3.13/site-packages/sqlalchemy/sql/schema.py:3625: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/unit/test_security.py::test_access_token_creation
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:48: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+
+tests/unit/test_security.py::test_access_token_creation
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:46: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + expires_delta
+
+tests/unit/test_security.py::test_verify_token
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:147: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    future_time = datetime.utcnow() + timedelta(hours=1)
+
+tests/unit/test_security.py::test_verify_token
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:161: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expired_data = {"sub": "test@example.com", "exp": (datetime.utcnow() - timedelta(minutes=30)).timestamp()}
+
+tests/unit/test_security.py::test_get_user_by_token
+  /Volumes/SSD HD/wwwdev/разное/radio-kamyshi/backend/tests/unit/test_security.py:173: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    future_time = datetime.utcnow() + timedelta(hours=1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.2-final-0 _______________
+
+Name                                    Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------
+app/__init__.py                             1      0   100%
+app/api/__init__.py                         0      0   100%
+app/api/api_v1/__init__.py                  0      0   100%
+app/api/api_v1/api.py                       9      9     0%   1-11
+app/api/api_v1/endpoints/__init__.py        0      0   100%
+app/api/api_v1/endpoints/auth.py           58     58     0%   1-142
+app/api/api_v1/endpoints/broadcast.py      18     18     0%   1-42
+app/api/api_v1/endpoints/playlists.py      42     42     0%   1-110
+app/api/api_v1/endpoints/programs.py      119    119     0%   1-315
+app/api/api_v1/endpoints/tracks.py         77     77     0%   1-187
+app/api/api_v1/endpoints/users.py          36     36     0%   1-82
+app/api/dependencies.py                    34     34     0%   1-72
+app/api/deps.py                             1      1     0%   2
+app/core/config.py                         89      4    96%   79, 82, 91, 105
+app/crud/__init__.py                        4      4     0%   1-4
+app/crud/base.py                           39     39     0%   1-66
+app/crud/crud_playlist.py                  28     28     0%   1-67
+app/crud/crud_program.py                   64     64     0%   1-164
+app/crud/crud_track.py                     19     19     0%   1-61
+app/crud/crud_user.py                      38     38     0%   1-60
+app/db/base_class.py                        8      0   100%
+app/main.py                                17     17     0%   1-38
+app/models/__init__.py                      4      0   100%
+app/models/playlist.py                     24      0   100%
+app/models/program.py                      50      0   100%
+app/models/track.py                        24      0   100%
+app/models/user.py                         19      0   100%
+app/schemas/__init__.py                     6      6     0%   1-6
+app/schemas/msg.py                          3      3     0%   1-5
+app/schemas/playlist.py                    30     30     0%   1-51
+app/schemas/program.py                     64     64     0%   1-99
+app/schemas/token.py                        9      9     0%   1-13
+app/schemas/track.py                       31     31     0%   1-48
+app/schemas/user.py                        29     29     0%   1-46
+app/utils/__init__.py                       2      0   100%
+app/utils/audio.py                        107     42    61%   17-18, 46-78, 100, 164-168, 182-215, 248-249, 263
+app/utils/email.py                         11      3    73%   21, 39-58
+app/utils/password.py                      15      9    40%   10-17, 21-25
+---------------------------------------------------------------------
+TOTAL                                    1129    833    26%
+======================= 79 passed, 27 warnings in 3.41s ========================
+
+Генерация HTML-отчета о покрытии кода...
+
+Статистика тестирования:
+Всего тестов: 79
+Пройдено: 79
+Провалено: 0
+Предупреждений: warnings
+
+Покрытие кода тестами: 26%
+
